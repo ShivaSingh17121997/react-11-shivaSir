@@ -1,12 +1,8 @@
 import { useState } from "react";
 
-
-
-
 function Counter() {
 
     const [babalu, setBabalu] = useState(1)
-
 
     return <>
         <h1>Hello this is Counter app {babalu}</h1>
