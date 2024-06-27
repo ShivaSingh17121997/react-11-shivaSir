@@ -12,6 +12,11 @@ function App() {
 
   // what are props => props are used to used to transfer data form parent component to child component // immutable
 
+  
+
+
+
+
   return (
     <>
       <Home />

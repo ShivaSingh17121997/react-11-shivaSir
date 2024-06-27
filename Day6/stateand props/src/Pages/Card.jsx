@@ -1,14 +1,13 @@
 import React from 'react'
 
-export default function Card({ name, id, key }) {
-
-    
-    console.log(name, id, key)
+export default function Card({ name, id }) {
+    console.log(name, id)
 
 
-    return (<div key={key} >
+    return <div key={id}>
         <p>{id}</p>
-        <p>{name} </p>
-    </div>)
+        <h1>{name}</h1>
+
+    </div>
 
 }

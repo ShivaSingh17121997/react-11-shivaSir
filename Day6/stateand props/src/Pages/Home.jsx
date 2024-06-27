@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Card from './Card'
-
+// nested component
 export default function Home() {
 
 
@@ -11,10 +11,15 @@ export default function Home() {
 
     ]
 
+
+
+
+    // life cycle method  // function lifecycle method mange karne ka kam kartahai hook == useEffect Hook 
+
     return (
         <div>
             {
-                student.map((item) => <Card {...item} key={item.id} />)
+                student.map((item) => <Card key={item.id}  {...item} />)
             }
 
         </div>
