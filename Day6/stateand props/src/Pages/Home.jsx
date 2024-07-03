@@ -13,7 +13,6 @@ export default function Home() {
 
 
 
-
     // life cycle method  // function lifecycle method mange karne ka kam kartahai hook == useEffect Hook 
 
     return (
