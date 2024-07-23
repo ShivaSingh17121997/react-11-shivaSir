@@ -45,7 +45,7 @@ function Refs() {
                 {/* manipulating data with react */}
                 {/* // controlled component */}
 
-                <input value={input} onChange={() => setInput(e.target.value)} type="text" />
+                {/* <input value={input} onChange={() => setInput(e.target.value)} type="text" /> */}
 
             </div>
         </div>
