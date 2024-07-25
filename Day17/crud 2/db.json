@@ -1,0 +1,34 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "ram",
+      "age": 21,
+      "isMarrid": false
+    },
+    {
+      "id": "d5a2",
+      "name": "shyam",
+      "age": "22",
+      "isMarried": false
+    },
+    {
+      "id": "7e0f",
+      "name": "Vishnu",
+      "age": "00",
+      "isMarried": true
+    },
+    {
+      "id": "9db1",
+      "name": "Ashishpuri",
+      "age": "20",
+      "isMarried": true
+    },
+    {
+      "id": "915c",
+      "name": "Sumit",
+      "age": "24",
+      "isMarried": true
+    }
+  ]
+}
