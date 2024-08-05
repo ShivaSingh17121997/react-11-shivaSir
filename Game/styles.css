@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #87CEEB; /* Light blue background */
+}
+
+#game {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #9ACD32; /* Grass green background */
+}
+
+#hero {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+
+.obstacle {
+    position: absolute;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+}
+
+#obstacle1 {
+    left: 200px;
+}
+
+#obstacle2 {
+    left: 400px;
+}
+
+#obstacle3 {
+    left: 600px;
+}
+
+#blueBox {
+    position: absolute;
+    top: 200px; /* Set within jump range */
+    right: 100px;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+}
+
+#score, #health {
+    position: absolute;
+    top: 20px;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+#score {
+    left: 20px;
+}
+
+#health {
+    left: 200px;
+}

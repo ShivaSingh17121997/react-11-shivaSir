@@ -1,15 +1,16 @@
 
 import './App.css'
-import Counter from './Pages/Counter';
-import Form from './Pages/Form';
+
+import Swiper from './Pages/Swiper';
 
 function App() {
 
   return (
     <>
-     <h1>Hello This is my second app</h1>
-     {/* <Counter/> */}
-     <Form/>
+      <h1>Hello This is my second app</h1>
+      {/* <Counter/> */}
+      {/* <Form/> */}
+      <Swiper />
 
     </>
   )

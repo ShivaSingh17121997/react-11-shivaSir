@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Binary Converter</title>
+</head>
+
+<body>
+    <h1>Image to Binary Converter</h1>
+
+    <!-- Placeholder image -->
+    <img id="myImage" src="./assets/tile-3.webp" style="display: none;">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let img = document.getElementById('myImage');
+            let canvas = document.createElement('canvas');
+            let ctx = canvas.getContext('2d');
+
+            img.onload = function () {
+                // Set canvas dimensions to match the image
+                canvas.width = img.width;
+                canvas.height = img.height;
+
+                // Draw the image onto the canvas
+                ctx.drawImage(img, 0, 0);
+
+                // Get the image data (RGBA values of each pixel)
+                let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+                // Convert image data to binary format
+                let binaryData = [];
+
+                for (let i = 0; i < imageData.data.length; i += 4) {
+                    // Extract RGB values
+                    let r = imageData.data[i];
+                    let g = imageData.data[i + 1];
+                    let b = imageData.data[i + 2];
+
+                    // Convert RGB to binary (assuming 8 bits per channel)
+                    let binaryR = r.toString(2).padStart(8, '0');
+                    let binaryG = g.toString(2).padStart(8, '0');
+                    let binaryB = b.toString(2).padStart(8, '0');
+
+                    // Concatenate to form a single binary string for the pixel
+                    let binaryPixel = binaryR + binaryG + binaryB;
+
+                    // Push binary data for this pixel to the array
+                    binaryData.push(binaryPixel);
+                }
+
+                // Now binaryData array contains binary strings for each pixel
+                console.log(binaryData);
+            };
+
+            img.onerror = function () {
+                console.error('Error loading the image.');
+            };
+        });
+    </script>
+</body>
+
+</html>
