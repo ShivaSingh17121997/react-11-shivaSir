@@ -22,6 +22,9 @@ export default function TodoWithReducer() {
         switch (action.type) {
             case "ADDTODO":
                 return { ...state, todo: [...state.todo, action.payload] }
+            case "DELETE_TODO":
+                return { ...state, todo: state.todo.filter((item) => item.id !== action.payload) }
+
             default:
                 return state
         }
@@ -53,7 +56,7 @@ export default function TodoWithReducer() {
                     Completed
                 </label>
 
-                <button onClick={() => dispatch({ type: "ADDTODO", payload: { id,inputVal, completed } })} >Add</button>
+                <button onClick={() => dispatch({ type: "ADDTODO", payload: { id, inputVal, completed } })} >Add</button>
             </div>
 
             {/* show data in ui */}
@@ -64,15 +67,15 @@ export default function TodoWithReducer() {
                             <p>{item.id}</p>
                             <h1>{item.inputVal}</h1>
                             <p>completed: {item.completed ? "Done" : "In Process"}</p>
-                            <button >Delete</button>
+
+
+                            <button onClick={() => dispatch({ type: "DELETE_TODO", payload: item.id })} >Delete</button>
+
+
                         </div>
                     })
                 }
             </div>
-
-
-
-
         </div>
     )
 }

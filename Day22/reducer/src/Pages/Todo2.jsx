@@ -5,7 +5,8 @@ const initialState = {
     todo: [],
     id: '',
     inputVal: '',
-    completed: false
+    completed: false,
+    editingId: null // Track which todo is being edited
 };
 
 // Reducer function to handle actions
@@ -17,7 +18,8 @@ const reducer = (state, action) => {
                 todo: [...state.todo, { id: state.id, inputVal: state.inputVal, completed: state.completed }],
                 id: '',
                 inputVal: '',
-                completed: false
+                completed: false,
+                editingId: null
             };
         case 'SET_ID':
             return { ...state, id: action.payload };
@@ -29,6 +31,28 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 todo: state.todo.filter(item => item.id !== action.payload)
+            };
+        case 'START_EDIT':
+            const todoToEdit = state.todo.find(item => item.id === action.payload);
+            return {
+                ...state,
+                id: todoToEdit.id,
+                inputVal: todoToEdit.inputVal,
+                completed: todoToEdit.completed,
+                editingId: todoToEdit.id
+            };
+        case 'SAVE_EDIT':
+            return {
+                ...state,
+                todo: state.todo.map(item =>
+                    item.id === state.editingId
+                        ? { ...item, inputVal: state.inputVal, completed: state.completed }
+                        : item
+                ),
+                id: '',
+                inputVal: '',
+                completed: false,
+                editingId: null
             };
         default:
             return state;
@@ -45,6 +69,13 @@ export default function Todo2() {
         }
     };
 
+    // Handler for saving the edited todo
+    const handleSaveEdit = () => {
+        if (state.id && state.inputVal) {
+            dispatch({ type: 'SAVE_EDIT' });
+        }
+    };
+
     return (
         <div>
             <div>
@@ -53,6 +84,7 @@ export default function Todo2() {
                     onChange={(e) => dispatch({ type: 'SET_ID', payload: e.target.value })}
                     type="text"
                     placeholder='Enter the unique ID'
+                    disabled={state.editingId !== null} // Disable when editing
                 />
                 <input
                     value={state.inputVal}
@@ -68,7 +100,11 @@ export default function Todo2() {
                     />
                     Completed
                 </label>
-                <button onClick={handleAddTodo}>Add</button>
+                {state.editingId === null ? (
+                    <button onClick={handleAddTodo}>Add</button>
+                ) : (
+                    <button onClick={handleSaveEdit}>Save</button>
+                )}
             </div>
 
             {/* Show data in UI */}
@@ -79,6 +115,7 @@ export default function Todo2() {
                         <h1>{item.inputVal}</h1>
                         <p>Completed: {item.completed ? "Done" : "In Process"}</p>
                         <button onClick={() => dispatch({ type: 'DELETE_TODO', payload: item.id })}>Delete</button>
+                        <button onClick={() => dispatch({ type: 'START_EDIT', payload: item.id })}>Edit</button>
                     </div>
                 ))}
             </div>

@@ -10,11 +10,11 @@ function App() {
 
   return (
     <>
-      {/* <TodoWithReducer /> */}
+      <TodoWithReducer />
       {/* <Todo /> */}
       {/* <CounterWithReducer /> */}
       {/* <UseReducer /> */}
-      <Todo2 />
+      {/* <Todo2 /> */}
     </>
 
   )
