@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "todo": "today we have to complete project"
+    },
+    {
+      "id": "aec1",
+      "todo": "lets checks"
+    },
+    {
+      "id": "b342",
+      "todo": "lets checks"
+    },
+    {
+      "id": "000e",
+      "todo": "Complete Redux Todo app"
+    },
+    {
+      "id": "c8fc",
+      "todo": "Complete Redux Todo app"
+    },
+    {
+      "id": "8d07",
+      "todo": "Competed react router dom"
+    }
+  ]
+}
