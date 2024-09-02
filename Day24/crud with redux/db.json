@@ -1,28 +1,20 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "todo": "today we have to complete project"
+      "id": "26e0",
+      "todo": "ram shyam"
     },
     {
-      "id": "aec1",
-      "todo": "lets checks"
+      "id": "eda9",
+      "todo": "har har mahadev"
     },
     {
-      "id": "b342",
-      "todo": "lets checks"
+      "id": "0005",
+      "todo": "hello class"
     },
     {
-      "id": "000e",
-      "todo": "Complete Redux Todo app"
-    },
-    {
-      "id": "c8fc",
-      "todo": "Complete Redux Todo app"
-    },
-    {
-      "id": "8d07",
-      "todo": "Competed react router dom"
+      "id": "2a63",
+      "todo": "hello bro"
     }
   ]
 }
