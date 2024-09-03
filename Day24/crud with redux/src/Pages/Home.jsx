@@ -42,7 +42,7 @@ export default function Home() {
                 return response.json(); // Extract JSON from the response
             })
             .then((data) => {
-                dispatch({ type: ADDTODODATA, payload: data }); // ==> redcer always
+                dispatch({ type: ADDTODODATA, payload: data }); // ==> reducer always
             })
             .catch((error) => {
                 console.error('There was a problem with the fetch operation:', error);

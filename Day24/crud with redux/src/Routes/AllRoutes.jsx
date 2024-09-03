@@ -19,3 +19,6 @@ export default function AllRoutes() {
         </div>
     )
 }
+
+
+// flow of redux action (obj)  ==> reducer  ==> state update(store)
