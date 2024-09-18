@@ -90,3 +90,15 @@
 
 //   const ageSum = people.reduce((acc,cv)=> acc + cv.age , 0)
 //   console.log(ageSum)
+
+
+
+let arr = [
+    { id: 1, name: "ram" },
+    { id: 1, name: "ram" },
+    { id: 1, name: "ram" },
+]
+
+let newArr = [...arr, "do todo"]
+
+console.log("new arr", newArr)
