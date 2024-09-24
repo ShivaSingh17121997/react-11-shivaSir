@@ -6,14 +6,27 @@ export default function Home() {
     const [product, setProduct] = useState([]);
     const [inputdata, setInputData] = useState("");
     const [page, setPage] = useState(1);
+    const [debounceInput, setDebounceInput] = useState(inputdata);
 
     let totalData = 20
 
+    // debouncing effect for the search input
+    useEffect(() => {
+        const handleDelay = setTimeout(() => {
+            setDebounceInput(inputdata)
+        }, 800);
+
+        return () => {
+            clearTimeout(handleDelay);
+        }
+
+
+    }, [inputdata])
 
 
     useEffect(() => {
         console.log(inputdata)
-        fetch(`http://localhost:9000/products?_limit=20&q=${inputdata}&_page=${page}`)
+        fetch(`http://localhost:9000/products?_limit=20&q=${debounceInput}&_page=${page}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
@@ -21,7 +34,7 @@ export default function Home() {
             })
             .catch(err => console.log("something is wrong"))
 
-    }, [inputdata, page])
+    }, [debounceInput, page])
 
     // sorting
 

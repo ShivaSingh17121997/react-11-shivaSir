@@ -20,7 +20,6 @@ export default function Home() {
                 console.log(toEditData)
                 await updateDoc(toEditData, { todo: todo })
 
-
                 setTodos(todos.map((item) => {
                     if (item.id == isEditId) {
                         return { ...item, todo }
@@ -80,8 +79,6 @@ export default function Home() {
     const handleEdit = (item) => {
         setIsEditId(item.id);
         setTodo(item.todo)
-
-
     }
 
 
